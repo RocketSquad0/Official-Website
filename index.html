@@ -96,207 +96,207 @@
             }
         }
 
-        /* ============ HEADER (SAME AS ABOUT.HTML) ============ */
-        header {
-            background: linear-gradient(90deg,
-                    rgba(10, 0, 0, 0.95) 0%,
-                    rgba(30, 0, 0, 0.95) 50%,
-                    rgba(10, 0, 0, 0.95) 100%);
-            padding: 0.8rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--fire-orange);
-            backdrop-filter: blur(20px);
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 30px rgba(255, 107, 0, 0.2);
-        }
+    /* ============ RESPONSIVE HEADER ============ */
+/* ============ RESPONSIVE HEADER ============ */
+header {
+    background: linear-gradient(90deg, 
+        rgba(10, 0, 0, 0.95) 0%,
+        rgba(30, 0, 0, 0.95) 50%,
+        rgba(10, 0, 0, 0.95) 100%);
+    padding: 0.8rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--fire-orange);
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 30px rgba(255, 107, 0, 0.2);
+}
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 1.5rem;
-        }
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
 
-        /* Left Side - Rocket Squad */
-        .left-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            position: relative;
-        }
+/* Left Side - Rocket Squad */
+.left-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: relative;
+}
 
-        .logo-img {
-            height: 45px;
-            width: auto;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.7));
-            animation: logoFire 2s infinite alternate;
-        }
+.logo-img {
+    height: 45px;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.7));
+    animation: logoFire 2s infinite alternate;
+}
 
-        @keyframes logoFire {
-            0% {
-                filter: drop-shadow(0 0 10px rgba(255, 107, 0, 0.5)) brightness(1);
-            }
+@keyframes logoFire {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(255, 107, 0, 0.5)) brightness(1);
+    }
+    100% {
+        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)) brightness(1.2);
+    }
+}
 
-            100% {
-                filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)) brightness(1.2);
-            }
-        }
+.logo-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: var(--rocket-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(255, 107, 0, 0.3);
+    display: flex;
+}
 
-        .logo-text {
-            font-size: 1.3rem;
-            font-weight: bold;
-            background: var(--rocket-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 10px rgba(255, 107, 0, 0.3);
-            display: flex;
-        }
+/* Desktop Navigation */
+.nav-links {
+    display: none;
+}
 
-        /* Desktop Navigation */
-        .nav-links {
-            display: none;
-        }
+/* Hamburger Menu */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 1rem;
+}
 
-        /* Hamburger Menu */
-        .hamburger-menu {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 28px;
-            height: 20px;
-            cursor: pointer;
-            z-index: 1001;
-            margin-left: 1rem;
-        }
+.hamburger-line {
+    height: 3px;
+    width: 100%;
+    background: var(--rocket-gradient);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
 
-        .hamburger-line {
-            height: 3px;
-            width: 100%;
-            background: var(--rocket-gradient);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
 
-        .hamburger-menu.active .hamburger-line:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
 
-        .hamburger-menu.active .hamburger-line:nth-child(2) {
-            opacity: 0;
-        }
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
 
-        .hamburger-menu.active .hamburger-line:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(10, 0, 0, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    transition: right 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 1.5rem 2rem;
+    border-left: 3px solid var(--fire-orange);
+    box-shadow: -5px 0 30px rgba(255, 0, 0, 0.3);
+}
 
-        /* Mobile Navigation */
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 100%;
-            max-width: 320px;
-            height: 100vh;
-            background: rgba(10, 0, 0, 0.98);
-            backdrop-filter: blur(20px);
-            z-index: 999;
-            transition: right 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            padding: 80px 1.5rem 2rem;
-            border-left: 3px solid var(--fire-orange);
-            box-shadow: -5px 0 30px rgba(255, 0, 0, 0.3);
-        }
+.mobile-nav.active {
+    right: 0;
+}
 
-        .mobile-nav.active {
-            right: 0;
-        }
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
 
-        .mobile-nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
+.mobile-nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 107, 0, 0.1);
+    border: 1px solid transparent;
+}
 
-        .mobile-nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 1rem 1.2rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: rgba(255, 107, 0, 0.1);
-            border: 1px solid transparent;
-        }
+.mobile-nav-links a i {
+    color: #ff6b00;
+    width: 25px;
+    text-align: center;
+    font-size: 1.2rem;
+}
 
-        .mobile-nav-links a i {
-            color: #ff6b00;
-            width: 25px;
-            text-align: center;
-            font-size: 1.2rem;
-        }
+.mobile-nav-footer {
+    margin-top: auto;
+    padding-top: 2rem;
+    border-top: 2px solid rgba(255, 107, 0, 0.3);
+    text-align: center;
+}
 
-        .mobile-nav-footer {
-            margin-top: auto;
-            padding-top: 2rem;
-            border-top: 2px solid rgba(255, 107, 0, 0.3);
-            text-align: center;
-        }
+.mobile-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
 
-        .mobile-social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-        }
+.mobile-social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 107, 0, 0.2);
+    border: 1px solid rgba(255, 107, 0, 0.4);
+}
 
-        .mobile-social-links a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            background: rgba(255, 107, 0, 0.2);
-            border: 1px solid rgba(255, 107, 0, 0.4);
-        }
+/* Overlay for mobile menu */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
 
-        /* Overlay for mobile menu */
-        .nav-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .nav-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* ============ HERO SECTION WITH LOW TRANSPARENCY BACKGROUND ============ */
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+    
+    /* ============ HERO SECTION WITH LOW TRANSPARENCY BACKGROUND ============ */
         .hero-section {
             min-height: 100vh;
             display: flex;
@@ -2055,82 +2055,81 @@
     <div class="fire-bg"></div>
     <div class="fire-overlay"></div>
 
-    <!-- Header with Social Media Icons -->
-    <header>
-        <nav class="nav-container">
-            <!-- Left Side - Rocket Squad -->
-        <a href = index.html>
+  <!-- Header with Social Media Icons -->
+<!-- Header with Social Media Icons -->
+<header>
+    <nav class="nav-container">
+        <!-- Left Side - Rocket Squad -->
+        <a href="index.html">
             <div class="left-logo-container">
-                   <img src="logo.png"
-                    alt="Rocket Squad" class="logo-img">
-                  <div class="logo-text">ROCKET SQUAD</div>
+                <img src="logo.png" alt="Rocket Squad" class="logo-img">
+                <div class="logo-text">ROCKET SQUAD</div>
             </div>
         </a>
-
-            <!-- Desktop Navigation Links (Visible on desktop) -->
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="meet-team.html">Team</a>
-                <a href="supporters.html">Supporters</a>
-                <a href="contact.html">Contact</a>
-            </div>
-
-            <!-- Hamburger Menu Button (Visible on mobile) -->
-            <div class="hamburger-menu" id="hamburgerMenu">
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-                <div class="hamburger-line"></div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-nav" id="mobileNav">
-        <div class="mobile-nav-links">
-            <a href="index.html" class="active">
-                <i class="fas fa-home"></i>
-                Home
-            </a>
-            <a href="about.html">
-                <i class="fas fa-info-circle"></i>
-                About Us
-            </a>
-            <a href="meet-team.html">
-                <i class="fas fa-users"></i>
-                Team Members
-            </a>
-            <a href="supporters.html">
-                <i class="fas fa-car"></i>
-                Supporters
-            </a>
-            <a href="contact.html">
-                <i class="fas fa-envelope"></i>
-                Contact
-            </a>
+        
+        <!-- Desktop Navigation Links (Visible on desktop) -->
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="meet-team.html">Team</a>
+            <a href="supporters.html">Supporters</a>
+            <a href="contact.html">Contact</a>
         </div>
-        <div class="mobile-nav-footer">
-            <p style="color: var(--fire-yellow); font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Follow Us
-            </p>
-            <div class="mobile-social-links">
-                <a href="https://www.facebook.com/profile.php?id=61585640483638" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://x.com/rocket_squad0" target="_blank">
-                    <i class="fab fa-x"></i>
-                </a>
-                <a href="https://www.instagram.com/rocket_squad0/" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/rocket-squad0/" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
+        
+        <!-- Hamburger Menu Button (Visible on mobile) -->
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+    </nav>
+</header>
+
+<!-- Mobile Navigation Menu -->
+<div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-links">
+        <a href="index.html">
+            <i class="fas fa-home"></i>
+            Home
+        </a>
+        <a href="about.html">
+            <i class="fas fa-info-circle"></i>
+            About Us
+        </a>
+        <a href="meet-team.html">
+            <i class="fas fa-users"></i>
+            Team Members
+        </a>
+        <a href="supporters.html">
+            <i class="fas fa-car"></i>
+            Supporters
+        </a>
+        <a href="contact.html">
+            <i class="fas fa-envelope"></i>
+            Contact
+        </a>
+    </div>
+    <div class="mobile-nav-footer">
+        <p style="color: var(--fire-yellow); font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Follow Us</p>
+        <div class="mobile-social-links">
+            <a href="https://www.facebook.com/profile.php?id=61585640483638" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/rocket_squad0" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/rocket_squad0/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/rocket-squad0/" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
         </div>
     </div>
+</div>
 
-    <!-- Overlay for mobile menu -->
-    <div class="nav-overlay" id="navOverlay"></div>
+<!-- Overlay for mobile menu -->
+<div class="nav-overlay" id="navOverlay"></div>
 
     <!-- ============ HERO SECTION WITH LOW TRANSPARENCY BACKGROUND ============ -->
     <section class="hero-section">
@@ -2279,7 +2278,7 @@
                     <div class="instagram-embed-container">
                         <!-- Instagram Post Embed -->
                         <blockquote class="instagram-media"
-                            data-instgrm-permalink="https://www.instagram.com/p/C8wXzQ0Nf7A/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            data-instgrm-permalink="https://www.instagram.com/p/DTVzL0ijhfy/?utm_source=ig_embed&amp;utm_campaign=loading"
                             data-instgrm-version="14">
                         </blockquote>
                     </div>
@@ -2813,31 +2812,88 @@
                 });
             });
         });
-        // Mobile Menu Functionality
-        function toggleMobileMenu() {
-            hamburgerMenu.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            navOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        }
+    // Mobile Menu Functionality
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const mobileNav = document.getElementById('mobileNav');
+    const navOverlay = document.getElementById('navOverlay');
+    
+    function toggleMobileMenu() {
+        hamburgerMenu.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    if (hamburgerMenu) hamburgerMenu.addEventListener('click', toggleMobileMenu);
+    if (navOverlay) navOverlay.addEventListener('click', toggleMobileMenu);
 
-        hamburgerMenu.addEventListener('click', toggleMobileMenu);
-        navOverlay.addEventListener('click', toggleMobileMenu);
-
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+       // Close mobile menu when clicking on a link
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburgerMenu.classList.remove('active');
+            mobileNav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
         });
+    });
+// Event Listeners for Mobile Menu
+if (hamburgerMenu) {
+    hamburgerMenu.addEventListener('click', toggleMobileMenu);
+}
+
+if (navOverlay) {
+    navOverlay.addEventListener('click', toggleMobileMenu);
+}
+
+// ============ BACK TO TOP BUTTON ============
+const backToTopBtn = document.getElementById('backToTop');
+
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'flex';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Set active nav link
+document.addEventListener('DOMContentLoaded', () => {
+    const currentPage = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+    
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage || (linkPage === 'index.html' && currentPage.includes('index'))) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Prevent horizontal scroll
+window.addEventListener('load', function() {
+    const body = document.body;
+    const html = document.documentElement;
+    
+    body.style.overflowX = 'hidden';
+    html.style.overflowX = 'hidden';
+});
+
+// Reload Instagram embeds on resize
+window.addEventListener('resize', function() {
+    if (window.instgrm) {
+        window.instgrm.Embeds.process();
+    }
+});
 
         // Fire particles animation
         document.addEventListener('DOMContentLoaded', function () {
@@ -2929,92 +2985,200 @@
                 header.style.boxShadow = 'none';
             }
         });
-        // Mobile Menu Functionality
-        const hamburgerMenu = document.getElementById('hamburgerMenu');
-        const mobileNav = document.getElementById('mobileNav');
-        const navOverlay = document.getElementById('navOverlay');
+        // ============ MOBILE MENU FUNCTIONALITY ============
+const hamburgerMenu = document.getElementById('hamburgerMenu');
+const mobileNav = document.getElementById('mobileNav');
+const navOverlay = document.getElementById('navOverlay');
 
-        function toggleMobileMenu() {
-            hamburgerMenu.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            navOverlay.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+function toggleMobileMenu() {
+    if (hamburgerMenu && mobileNav && navOverlay) {
+        hamburgerMenu.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+}
+
+// Event Listeners for Mobile Menu
+if (hamburgerMenu) {
+    hamburgerMenu.addEventListener('click', toggleMobileMenu);
+}
+
+if (navOverlay) {
+    navOverlay.addEventListener('click', toggleMobileMenu);
+}
+
+// Close mobile menu when clicking on a link
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (hamburgerMenu && mobileNav && navOverlay) {
+            hamburgerMenu.classList.remove('active');
+            mobileNav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
         }
+    });
+});
 
-        hamburgerMenu.addEventListener('click', toggleMobileMenu);
-        navOverlay.addEventListener('click', toggleMobileMenu);
+// ============ BACK TO TOP BUTTON ============
+const backToTopBtn = document.getElementById('backToTop');
 
-        // Close mobile menu when clicking on a link
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburgerMenu.classList.remove('active');
-                mobileNav.classList.remove('active');
-                navOverlay.classList.remove('active');
-                document.body.style.overflow = '';
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'flex';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// ============ SMOOTH SCROLLING ============
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
-        });
+        }
+    });
+});
 
-        // Back to Top Button
-        const backToTopBtn = document.getElementById('backToTop');
+// ============ FIRE BACKGROUND ANIMATION ============
+const fireOverlay = document.querySelector('.fire-overlay');
+if (fireOverlay) {
+    setInterval(() => {
+        fireOverlay.style.opacity = (0.1 + Math.random() * 0.05) + '';
+    }, 300);
+}
 
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.style.display = 'flex';
-            } else {
-                backToTopBtn.style.display = 'none';
-            }
-        });
+// ============ PARTICLE EFFECTS ============
+function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    if (!particlesContainer) return;
+    
+    const particleCount = 20;
 
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    for (let i = 0; i < particleCount; i++) {
+        setTimeout(() => {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
 
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            const size = Math.random() * 8 + 2;
+            const left = Math.random() * 100;
+            const duration = Math.random() * 4 + 3;
+            const delay = Math.random() * 2;
+
+            particle.style.cssText = `
+                width: ${size}px;
+                height: ${size}px;
+                left: ${left}%;
+                animation-duration: ${duration}s;
+                animation-delay: ${delay}s;
+            `;
+
+            particlesContainer.appendChild(particle);
+
+            // Remove particle after animation
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.remove();
                 }
-            });
-        });
+            }, (duration + delay) * 1000);
+        }, i * 300);
+    }
+}
 
-        // Set active nav link
-        document.addEventListener('DOMContentLoaded', () => {
-            const currentPage = window.location.pathname;
-            const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+// Initialize particles
+document.addEventListener('DOMContentLoaded', function () {
+    createParticles();
+    setInterval(createParticles, 8000);
+});
 
-            navLinks.forEach(link => {
-                const linkPage = link.getAttribute('href');
-                if (linkPage === currentPage || (linkPage === 'index.html' && currentPage.includes('index'))) {
-                    link.classList.add('active');
-                }
-            });
-        });
+// ============ VIDEO FALLBACK ============
+const video = document.querySelector('.hero-video-bg');
+if (video) {
+    video.addEventListener('error', function () {
+        this.style.display = 'none';
+    });
+}
 
-        // Prevent horizontal scroll
-        window.addEventListener('load', function () {
-            const body = document.body;
-            const html = document.documentElement;
+// ============ ACTIVE NAV LINK ON SCROLL ============
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
 
-            body.style.overflowX = 'hidden';
-            html.style.overflowX = 'hidden';
-        });
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - 200)) {
+            current = section.getAttribute('id');
+        }
+    });
 
-        // Reload Instagram embeds on resize
-        window.addEventListener('resize', function () {
-            if (window.instgrm) {
-                window.instgrm.Embeds.process();
-            }
-        });
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// ============ HEADER SCROLL EFFECT ============
+const header = document.querySelector('header');
+if (header) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(10, 10, 10, 0.98)';
+            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.5)';
+        } else {
+            header.style.background = 'rgba(10, 10, 10, 0.95)';
+            header.style.boxShadow = 'none';
+        }
+    });
+}
+
+// ============ SET ACTIVE NAV LINK ON PAGE LOAD ============
+document.addEventListener('DOMContentLoaded', () => {
+    const currentPage = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href');
+        if (linkPage === currentPage || (linkPage === 'index.html' && currentPage.includes('index'))) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// ============ PREVENT HORIZONTAL SCROLL ============
+window.addEventListener('load', function () {
+    const body = document.body;
+    const html = document.documentElement;
+
+    body.style.overflowX = 'hidden';
+    html.style.overflowX = 'hidden';
+});
+
+// ============ INSTAGRAM EMBEDS RELOAD ON RESIZE ============
+window.addEventListener('resize', function () {
+    if (window.instgrm) {
+        window.instgrm.Embeds.process();
+    }
+});
+
     </script>
 
 

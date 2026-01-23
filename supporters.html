@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Supporters | Rocket Squad | Formula Pakistan Racing Team 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root {
+        --fire-red: #ff0000;
+        --fire-orange: #ff6b00;
+        --fire-yellow: #ffd700;
+        --dark-bg: #0a0a0a;
+        --card-bg: rgba(30, 30, 30, 0.8);
+        --pakistan-green: #01411C;
+        --pakistan-white: #FFFFFF;
+        --accent-blue: #0066cc;
+        --facebook-blue: #1877F2;
+        --twitter-blue: #1DA1F2;
+        --instagram-purple: #E4405F;
+        --linkedin-blue: #0A66C2;
+        --rocket-gradient: linear-gradient(135deg, #FF0000 0%, #FF6B00 50%, #FFD700 100%);
+        --sponsor-gold: #FFD700;
+        --sponsor-silver: #C0C0C0;
+        --sponsor-bronze: #CD7F32;
+    }
+
+    body {
+        background: var(--dark-bg);
+        color: white;
+        overflow-x: hidden;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+    }
+
+    /* Fire Background Animation */
+    .fire-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            radial-gradient(circle at 20% 80%, rgba(255, 0, 0, 0.3) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(255, 107, 0, 0.2) 0%, transparent 50%),
+            radial-gradient(circle at 40% 40%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+            linear-gradient(45deg, #000000 0%, #1a0000 100%);
+        z-index: -3;
+        animation: bgPulse 8s infinite alternate;
+    }
+
+    @keyframes bgPulse {
+        0% {
+            filter: hue-rotate(0deg) brightness(0.8);
+        }
+        50% {
+            filter: hue-rotate(10deg) brightness(0.9);
+        }
+        100% {
+            filter: hue-rotate(-10deg) brightness(1);
+        }
+    }
+
+    .fire-overlay {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: var(--rocket-gradient);
+        opacity: 0.08;
+        z-index: -2;
+        animation: fireFlicker 3s infinite alternate;
+    }
+
+    @keyframes fireFlicker {
+        0%, 100% {
+            opacity: 0.05;
+            transform: scaleY(1);
+        }
+        50% {
+            opacity: 0.12;
+            transform: scaleY(1.2);
+        }
+    }
+
+    /* ============ RESPONSIVE HEADER ============ */
+    header {
+        background: linear-gradient(90deg, 
+            rgba(10, 0, 0, 0.95) 0%,
+            rgba(30, 0, 0, 0.95) 50%,
+            rgba(10, 0, 0, 0.95) 100%);
+        padding: 0.8rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 2px solid var(--fire-orange);
+        backdrop-filter: blur(20px);
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 30px rgba(255, 107, 0, 0.2);
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.5rem;
+    }
+
+    /* Left Side - Rocket Squad */
+    .left-logo-container {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        position: relative;
+    }
+
+    .logo-img {
+        height: 45px;
+        width: auto;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.7));
+        animation: logoFire 2s infinite alternate;
+    }
+
+    @keyframes logoFire {
+        0% {
+            filter: drop-shadow(0 0 10px rgba(255, 107, 0, 0.5)) brightness(1);
+        }
+        100% {
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8)) brightness(1.2);
+        }
+    }
+
+    .logo-text {
+        font-size: 1.3rem;
+        font-weight: bold;
+        background: var(--rocket-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 10px rgba(255, 107, 0, 0.3);
+        display: flex;
+    }
+
+    /* Desktop Navigation */
+    .nav-links {
+        display: none;
+    }
+
+    /* Hamburger Menu */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 28px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1001;
+        margin-left: 1rem;
+    }
+
+    .hamburger-line {
+        height: 3px;
+        width: 100%;
+        background: var(--rocket-gradient);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger-menu.active .hamburger-line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger-menu.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .hamburger-line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        max-width: 320px;
+        height: 100vh;
+        background: rgba(10, 0, 0, 0.98);
+        backdrop-filter: blur(20px);
+        z-index: 999;
+        transition: right 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        padding: 80px 1.5rem 2rem;
+        border-left: 3px solid var(--fire-orange);
+        box-shadow: -5px 0 30px rgba(255, 0, 0, 0.3);
+    }
+
+    .mobile-nav.active {
+        right: 0;
+    }
+
+    .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .mobile-nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 1rem 1.2rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        background: rgba(255, 107, 0, 0.1);
+        border: 1px solid transparent;
+    }
+
+    .mobile-nav-links a i {
+        color: #ff6b00;
+        width: 25px;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .mobile-nav-footer {
+        margin-top: auto;
+        padding-top: 2rem;
+        border-top: 2px solid rgba(255, 107, 0, 0.3);
+        text-align: center;
+    }
+
+    .mobile-social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .mobile-social-links a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        background: rgba(255, 107, 0, 0.2);
+        border: 1px solid rgba(255, 107, 0, 0.4);
+    }
+
+    /* Overlay for mobile menu */
+    .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* ============ SUPPORTERS HERO SECTION ============ */
+    .supporters-hero {
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        background: 
+            linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)),
+            url('sponsors.png');
+        background-size: cover;
+        background-position: center;
+        padding: 8rem 1rem 4rem;
+        margin-top: 60px;
+        text-align: center;
+        opacity: 0.50;
+        
+    }
+
+    @media (max-width: 768px) {
+        .supporters-hero {
+            min-height: 60vh;
+            padding: 7rem 1rem 3rem;
+        }
+    }
+
+    .supporters-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg,
+                rgba(255, 0, 0, 0.2) 0%,
+                rgba(255, 107, 0, 0.3) 50%,
+                rgba(255, 215, 0, 0.2) 100%);
+        z-index: 1;
+    }
+
+    .supporters-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .supporters-hero-title {
+        font-size: 4rem;
+        font-weight: 800;
+        color: var(--fire-yellow);
+        margin-bottom: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-shadow: 0 2px 15px rgba(255, 107, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        .supporters-hero-title {
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .supporters-hero-title {
+            font-size: 2.2rem;
+            letter-spacing: 1.5px;
+        }
+    }
+
+    .supporters-hero-subtitle {
+        font-size: 1.5rem;
+        color: white;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        font-weight: 300;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+        .supporters-hero-subtitle {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .supporters-hero-subtitle {
+            font-size: 1rem;
+        }
+    }
+
+    /* ============ SUPPORTERS PAGE CONTENT ============ */
+    .supporters-page-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+        position: relative;
+        width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        .supporters-page-container {
+            padding: 3rem 1rem;
+        }
+    }
+
+    /* Section Title */
+    .section-title {
+        color: var(--fire-yellow);
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: var(--rocket-gradient);
+        border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 2rem;
+        }
+    }
+
+    /* Introduction Section */
+    .introduction-section {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        margin-bottom: 4rem;
+        border: 2px solid rgba(255, 107, 0, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .introduction-section {
+            padding: 2rem 1.5rem;
+        }
+    }
+
+    .introduction-text {
+        color: #ddd;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Sponsor Categories */
+    .sponsor-categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 4rem 0;
+    }
+
+    @media (max-width: 768px) {
+        .sponsor-categories {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .category-card {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .category-card.gold {
+        border-color: var(--sponsor-gold);
+    }
+
+    .category-card.silver {
+        border-color: var(--sponsor-silver);
+    }
+
+    .category-card.bronze {
+        border-color: var(--sponsor-bronze);
+    }
+
+    .category-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(255, 107, 0, 0.3);
+    }
+
+    .category-icon {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .category-card.gold .category-icon {
+        color: var(--sponsor-gold);
+    }
+
+    .category-card.silver .category-icon {
+        color: var(--sponsor-silver);
+    }
+
+    .category-card.bronze .category-icon {
+        color: var(--sponsor-bronze);
+    }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .category-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .category-card.gold .category-title {
+        color: var(--sponsor-gold);
+    }
+
+    .category-card.silver .category-title {
+        color: var(--sponsor-silver);
+    }
+
+    .category-card.bronze .category-title {
+        color: var(--sponsor-bronze);
+    }
+
+    .category-description {
+        color: #ddd;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    /* Current Supporters Grid */
+    .supporters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 4rem 0;
+    }
+
+    .supporter-card {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        border: 2px solid rgba(255, 107, 0, 0.2);
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .supporter-card:hover {
+        border-color: var(--fire-orange);
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(255, 107, 0, 0.3);
+    }
+
+    .supporter-logo {
+        max-width: 200px;
+        max-height: 100px;
+        margin-bottom: 1.5rem;
+        filter: brightness(0) invert(1);
+        transition: all 0.3s ease;
+    }
+
+    .supporter-card:hover .supporter-logo {
+        transform: scale(1.1);
+        filter: brightness(1) invert(0);
+    }
+
+    .supporter-name {
+        color: var(--fire-yellow);
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .supporter-type {
+        display: inline-block;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .supporter-type.gold {
+        background: rgba(255, 215, 0, 0.2);
+        color: var(--sponsor-gold);
+        border: 1px solid rgba(255, 215, 0, 0.4);
+    }
+
+    .supporter-type.silver {
+        background: rgba(192, 192, 192, 0.2);
+        color: var(--sponsor-silver);
+        border: 1px solid rgba(192, 192, 192, 0.4);
+    }
+
+    .supporter-type.bronze {
+        background: rgba(205, 127, 50, 0.2);
+        color: var(--sponsor-bronze);
+        border: 1px solid rgba(205, 127, 50, 0.4);
+    }
+
+    .supporter-description {
+        color: #ddd;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-top: 1rem;
+    }
+
+    /* Partnership Benefits */
+    .benefits-section {
+        margin: 5rem 0;
+    }
+
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .benefit-card {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        border: 2px solid rgba(255, 107, 0, 0.2);
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .benefit-card:hover {
+        border-color: var(--fire-orange);
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(255, 107, 0, 0.25);
+    }
+
+    .benefit-icon {
+        font-size: 3rem;
+        color: var(--fire-yellow);
+        margin-bottom: 1.5rem;
+    }
+
+    .benefit-card h4 {
+        color: var(--fire-yellow);
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .benefit-card p {
+        color: #ddd;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* How to Support Section */
+    .support-options {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        margin: 5rem 0;
+        border: 2px solid rgba(255, 107, 0, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .support-options {
+            padding: 2rem 1.5rem;
+        }
+    }
+
+    .options-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .option-item {
+        background: rgba(255, 107, 0, 0.1);
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+        border: 1px solid rgba(255, 107, 0, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .option-item:hover {
+        background: rgba(255, 107, 0, 0.2);
+        border-color: var(--fire-orange);
+        transform: translateY(-5px);
+    }
+
+    .option-item h4 {
+        color: var(--fire-yellow);
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    .option-item p {
+        color: #ddd;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Contact for Sponsorship */
+    .sponsorship-contact {
+        text-align: center;
+        margin: 5rem 0;
+        padding: 3rem 2rem;
+        background: linear-gradient(135deg, rgba(255, 107, 0, 0.1), rgba(255, 0, 0, 0.1));
+        border-radius: 20px;
+        border: 2px solid var(--fire-orange);
+    }
+
+    .contact-info {
+        margin-top: 2rem;
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1rem 0;
+        color: #ddd;
+        font-size: 1.1rem;
+    }
+
+    .contact-item i {
+        color: var(--fire-yellow);
+        font-size: 1.5rem;
+    }
+
+    .contact-email {
+        color: var(--fire-yellow);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .contact-email:hover {
+        color: var(--fire-orange);
+        text-decoration: underline;
+    }
+
+    /* Back to Home Button */
+    .back-to-home {
+        text-align: center;
+        margin: 4rem 0 2rem;
+    }
+
+    .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 2.5rem;
+        background: var(--rocket-gradient);
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(255, 107, 0, 0.4);
+    }
+
+    .back-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 107, 0, 0.6);
+    }
+
+    /* ============ RESPONSIVE FOOTER ============ */
+    .main-footer {
+        background: linear-gradient(180deg, #000000 0%, #1a0000 100%);
+        padding: 3rem 1rem 1.5rem;
+        border-top: 4px solid var(--fire-orange);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            text-align: center;
+        }
+    }
+
+    .footer-section h3 {
+        color: var(--fire-yellow);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        padding-bottom: 0.5rem;
+    }
+
+    .footer-section p,
+    .footer-section a {
+        color: #ddd;
+        text-decoration: none;
+        line-height: 1.7;
+        font-size: 0.95rem;
+        transition: all 0.3s;
+    }
+
+    .footer-section a:hover {
+        color: var(--fire-yellow);
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 2px solid rgba(255, 107, 0, 0.3);
+        position: relative;
+        z-index: 1;
+    }
+
+    .footer-logo {
+        font-size: 1.8rem;
+        font-weight: 800;
+        background: var(--rocket-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .copyright {
+        color: #aaa;
+        font-size: 0.9rem;
+        font-weight: 300;
+        line-height: 1.5;
+        padding: 0 0.5rem;
+    }
+
+    .footer-social-icons {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 1.2rem;
+        justify-content: center;
+    }
+
+    .footer-social-icons a {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        background: rgba(255, 107, 0, 0.2);
+        border: 1px solid rgba(255, 107, 0, 0.4);
+    }
+
+    .footer-social-icons a:hover {
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 5px 20px rgba(255, 107, 0, 0.4);
+    }
+
+    .footer-social-icons .facebook {
+        background: linear-gradient(135deg, var(--facebook-blue), #0A5EB5);
+    }
+
+    .footer-social-icons .twitter {
+        background: linear-gradient(135deg, var(--twitter-blue), #1A91DA);
+    }
+
+    .footer-social-icons .instagram {
+        background: linear-gradient(45deg, #f09433, #e6683c, #dc2743);
+    }
+
+    .footer-social-icons .linkedin {
+        background: linear-gradient(135deg, var(--linkedin-blue), #0A5EB5);
+    }
+
+    /* ============ BACK TO TOP ============ */
+    .back-to-top {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        width: 45px;
+        height: 45px;
+        background: var(--rocket-gradient);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(255, 107, 0, 0.6);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        display: none;
+        animation: goldenGlow 2s ease-in-out infinite alternate;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @keyframes goldenGlow {
+        from {
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.6);
+        }
+        to {
+            box-shadow: 0 4px 25px rgba(255, 215, 0, 0.8);
+        }
+    }
+
+    .back-to-top:hover {
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 10px 30px rgba(255, 107, 0, 0.8);
+    }
+
+    /* ============ DESKTOP STYLES ============ */
+    @media (min-width: 768px) {
+        .logo-text {
+            display: block;
+            font-size: 1.4rem;
+        }
+        
+        .logo-img {
+            height: 50px;
+        }
+        
+        .hamburger-menu {
+            display: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            position: relative;
+            background: rgba(255, 107, 0, 0.1);
+            border: 1px solid transparent;
+            font-size: 0.9rem;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ffd700;
+            background: rgba(255, 107, 0, 0.25);
+            border-color: rgba(255, 107, 0, 0.5);
+        }
+        
+        .supporters-hero-title {
+            font-size: 4.5rem;
+        }
+        
+        .supporters-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .benefits-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .nav-container {
+            padding: 0 2rem;
+        }
+        
+        .logo-text {
+            font-size: 1.6rem;
+        }
+        
+        .supporters-hero-title {
+            font-size: 5rem;
+        }
+        
+        .sponsor-categories {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .supporters-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .nav-container {
+            padding: 0 3rem;
+        }
+    }
+
+    /* ============ EXTRA SMALL DEVICES ============ */
+    @media (max-width: 360px) {
+        .supporters-hero-title {
+            font-size: 1.8rem;
+        }
+        
+        .supporters-hero-subtitle {
+            font-size: 0.9rem;
+        }
+        
+        .section-title {
+            font-size: 1.6rem;
+        }
+        
+        .category-card,
+        .supporter-card,
+        .benefit-card {
+            padding: 2rem 1.5rem;
+        }
+        
+        .back-btn {
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Fire Background -->
+    <div class="fire-bg"></div>
+    <div class="fire-overlay"></div>
+    
+    <!-- Header with Social Media Icons -->
+    <header>
+        <nav class="nav-container">
+            <!-- Left Side - Rocket Squad -->
+        <a href = index.html>
+            <div class="left-logo-container">
+                <img src="logo.png" alt="Rocket Squad" class="logo-img">
+                <div class="logo-text">ROCKET SQUAD</div>
+            </div>
+        </a>
+            
+            <!-- Desktop Navigation Links (Visible on desktop) -->
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="meet-team.html">Team</a>
+                <a href="supporters.html" class="active">Supporters</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <!-- Hamburger Menu Button (Visible on mobile) -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-links">
+            <a href="index.html">
+                <i class="fas fa-home"></i>
+                Home
+            </a>
+            <a href="about.html">
+                <i class="fas fa-info-circle"></i>
+                About Us
+            </a>
+            <a href="meet-team.html">
+                <i class="fas fa-users"></i>
+                Team Members
+            </a>
+            <a href="supporters.html" class="active">
+                <i class="fas fa-handshake"></i>
+                Supporters
+            </a>
+            <a href="contact.html">
+                <i class="fas fa-envelope"></i>
+                Contact
+            </a>
+        </div>
+        <div class="mobile-nav-footer">
+            <p style="color: var(--fire-yellow); font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Follow Us</p>
+            <div class="mobile-social-links">
+                <a href="https://www.facebook.com/profile.php?id=61585640483638" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/rocket_squad0" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.instagram.com/rocket_squad0/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rocket-squad0/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Overlay for mobile menu -->
+    <div class="nav-overlay" id="navOverlay"></div>
+    
+    <!-- Supporters Hero Section -->
+    <section class="supporters-hero">
+        <div class="supporters-hero-overlay"></div>
+        <div class="supporters-hero-content">
+            <h1 class="supporters-hero-title">OUR SUPPORTERS</h1>
+            <p class="supporters-hero-subtitle">
+                Powering our journey through partnership, collaboration, and shared vision for 
+                innovation and excellence in student motorsports.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Supporters Page Content -->
+    <main class="supporters-page-container">
+        <!-- Introduction Section -->
+        <section class="introduction-section">
+            <h2 class="section-title">Fueling Our Passion</h2>
+            <p class="introduction-text">
+                Our journey in Formula Pakistan wouldn't be possible without the invaluable support of our sponsors, 
+                partners, and supporters. These visionary organizations and individuals share our commitment to 
+                innovation, education, and excellence in engineering.
+            </p>
+            <p class="introduction-text">
+                Together, we're not just building race cars—we're building the future of motorsports in Pakistan, 
+                nurturing young talent, and pushing the boundaries of what's possible in student engineering.
+            </p>
+        </section>
+        
+        <!-- Sponsor Categories -->
+        <section class="sponsor-categories-section">
+            <h2 class="section-title">Partnership Tiers</h2>
+            <div class="sponsor-categories">
+                <div class="category-card gold">
+                    <div class="category-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="category-title">Gold Partners</h3>
+                    <p class="category-description">
+                        Our premier supporters who provide significant financial and technical backing, 
+                        enabling major advancements in our car development and team operations.
+                    </p>
+                </div>
+                
+                <div class="category-card silver">
+                    <div class="category-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="category-title">Silver Partners</h3>
+                    <p class="category-description">
+                        Valued partners who provide essential resources, expertise, and support 
+                        that directly contribute to our technical development and competitive success.
+                    </p>
+                </div>
+                
+                <div class="category-card bronze">
+                    <div class="category-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="category-title">Bronze Supporters</h3>
+                    <p class="category-description">
+                        Essential contributors who provide critical support, materials, and services 
+                        that keep our team operational and competitive throughout the season.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Current Supporters Grid -->
+        <section class="current-supporters">
+            <h2 class="section-title">Our Valued Supporters</h2>
+            <div class="supporters-grid">
+                <!-- Gold Supporter -->
+                <div class="supporter-card">
+                    <img src="https://eiengineering.pk/images/logo_new.png" alt="EIE Logo" class="supporter-logo">
+                    <h3 class="supporter-name">Electronic Inconnect Engineering (EIE)</h3>
+                    <span class="supporter-type gold">Gold Partner</span>
+                    <p class="supporter-description">
+                        Providing cutting-edge electronic components, technical expertise, and 
+                        mentorship that power our car's electrical systems and performance.
+                    </p>
+                </div>
+                
+                <!-- Silver Supporter -->
+                <div class="supporter-card">
+                    <img src="https://idaraalkhair.com/wp-content/uploads/2025/05/cropped-Idara-Alkhair-Logo-Png-4-1-150x150.png" alt="Al-Khair School" class="supporter-logo">
+                    <h3 class="supporter-name">Al-Khair Secondary School</h3>
+                    <span class="supporter-type silver">Institutional Partner</span>
+                    <p class="supporter-description">
+                        Our educational home, providing facilities, academic support, and the 
+                        foundation that enables our team to excel in both engineering and education.
+                    </p>
+                </div>
+                
+                <!-- Bronze Supporter -->
+                <div class="supporter-card">
+                    <div class="supporter-icon">
+                        <i class="fas fa-university" style="font-size: 4rem; color: var(--fire-yellow); margin-bottom: 1rem;"></i>
+                    </div>
+                    <h3 class="supporter-name">NUST University Mentors</h3>
+                    <span class="supporter-type bronze">Technical Mentors</span>
+                    <p class="supporter-description">
+                        Expert guidance from NUST engineering faculty who provide invaluable 
+                        technical mentorship, design feedback, and industry insights.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+         <section class="introduction-section">
+            <h2 class="section-title">Electronic Incorrect Engineering (EIE)</h2>
+            <p class="introduction-text">
+               EIE (Electronic Interconnect Engineering) is a leading electronics engineering company based in Islamabad, Pakistan. We specialize in electronic product design, PCB development, hardware and firmware solutions, and electronic repairs. Our team also provides green energy solutions, power backup systems, and technical support for businesses and industries. At EIE, we combine innovation, precision, and reliability to deliver cutting-edge engineering solutions.
+            </p>
+            <p class="introduction-text">
+                "At EIE, they’re not just creating electronics solutions — we’re empowering innovation, supporting emerging engineers, and shaping the future of technology in Pakistan."
+            </p>
+        </section>
+        
+        <!-- Partnership Benefits -->
+        <section class="benefits-section">
+            <h2 class="section-title">Partnership Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h4>Brand Visibility</h4>
+                    <p>
+                        Prominent logo placement on our car, team uniforms, and all digital platforms 
+                        reaching thousands of motorsports enthusiasts.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h4>Networking</h4>
+                    <p>
+                        Access to exclusive industry events, engineering networks, and partnerships 
+                        with other innovative organizations.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>Talent Pipeline</h4>
+                    <p>
+                        Direct access to Pakistan's brightest young engineering talent for internships 
+                        and future recruitment opportunities.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>CSR Impact</h4>
+                    <p>
+                        Meaningful corporate social responsibility impact by supporting STEM education 
+                        and youth development in Pakistan.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How to Support Section -->
+        <section class="support-options">
+            <h2 class="section-title">Join Our Journey</h2>
+            <p style="color: #ddd; text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                There are multiple ways to support Rocket Squad and contribute to the future of 
+                motorsports in Pakistan.
+            </p>
+            <div class="options-grid">
+                <div class="option-item">
+                    <h4>Financial Sponsorship</h4>
+                    <p>
+                        Direct funding for car development, competition fees, and team operations.
+                    </p>
+                </div>
+                
+                <div class="option-item">
+                    <h4>In-Kind Support</h4>
+                    <p>
+                        Provision of materials, equipment, software, or services needed for our project.
+                    </p>
+                </div>
+                
+                <div class="option-item">
+                    <h4>Technical Partnership</h4>
+                    <p>
+                        Expert guidance, engineering support, and technical mentorship.
+                    </p>
+                </div>
+                
+                <div class="option-item">
+                    <h4>Media Partnership</h4>
+                    <p>
+                        Help us share our story through media coverage and promotional support.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact for Sponsorship -->
+        <section class="sponsorship-contact">
+            <h2 class="section-title">Become a Supporter</h2>
+            <p style="color: #ddd; font-size: 1.2rem; margin-bottom: 2rem;">
+                Interested in supporting Rocket Squad? Contact our partnership team to discuss 
+                collaboration opportunities.
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Partnership Team: Rocket Squad Sponsorship</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:squadrocket203@gmail.com" class="contact-email">squadrocket203@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+92 3192741303</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Back to Home Button -->
+        <div class="back-to-home">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </main>
+    
+    <!-- Professional Footer with Social Media -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ROCKET SQUAD</h3>
+                <p>
+                    We are a passionate team of young engineers and innovators from Karachi, Pakistan, competing in
+                    Formula Pakistan to push the boundaries of racing technology.
+                </p>
+                <!-- Social Media Icons in Footer -->
+                <div class="footer-social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61585640483638" target="_blank" class="facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/rocket_squad0" target="_blank" class="twitter" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/rocket_squad0/" target="_blank" class="instagram" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rocket-squad0/" target="_blank" class="linkedin" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>QUICK LINKS</h3>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="about.html">About</a></p>
+                <p><a href="meet-team.html">Team Members</a></p>
+                <p><a href="supporters.html">Supporters</a></p>
+                <p><a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>CONTACT INFO</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Karachi, Pakistan</p>
+                <p><i class="fas fa-school"></i> Al-Khair Secondary School</p>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:squadrocket203@gmail.com">squadrocket203@gmail.com</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo">ROCKET SQUAD</div>
+            <p class="copyright">
+                © 2025 Rocket Squad - Formula Pakistan. All Rights Reserved. |
+                Powered by Passion &amp; Innovation 🔥
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+    // Mobile Menu Functionality
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const mobileNav = document.getElementById('mobileNav');
+    const navOverlay = document.getElementById('navOverlay');
+    
+    function toggleMobileMenu() {
+        hamburgerMenu.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    hamburgerMenu.addEventListener('click', toggleMobileMenu);
+    navOverlay.addEventListener('click', toggleMobileMenu);
+    
+    // Close mobile menu when clicking on a link
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburgerMenu.classList.remove('active');
+            mobileNav.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'flex';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+    
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Smooth Scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Set active nav link
+    document.addEventListener('DOMContentLoaded', () => {
+        const currentPage = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage || (linkPage === 'supporters.html' && currentPage.includes('supporters'))) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Add hover effects to cards
+        const cards = document.querySelectorAll('.category-card, .supporter-card, .benefit-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    });
+    
+    // Prevent horizontal scroll
+    window.addEventListener('load', function() {
+        const body = document.body;
+        const html = document.documentElement;
+        
+        body.style.overflowX = 'hidden';
+        html.style.overflowX = 'hidden';
+    });
+    
+    // Add animation to supporter cards on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Observe supporter cards
+    document.addEventListener('DOMContentLoaded', () => {
+        const supporterCards = document.querySelectorAll('.supporter-card');
+        supporterCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    });
+    </script>
+</body>
+</html>
